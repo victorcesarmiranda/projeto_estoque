@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Formulario</title>
+    <link href="style1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<header>
+    <h3>Inserir Tipo</h3>
+</header>
+<section>
+    <div>
+
+        <body>
+        <form action="#" th:action="@{/addTipoProduto}" th:object="${tipoProduto}" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Inserir um tipo" th:field="*{nome}">
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+        </body>
+    </div>
+    <div>
+    </div>
+</section>
+<footer>
+    <p>&copy; Atualização de Estoque</p>
+</footer>
+</body>
+
+</html>
