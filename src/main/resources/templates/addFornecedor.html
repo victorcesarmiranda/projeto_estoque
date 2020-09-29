@@ -11,22 +11,22 @@
 
 <body>
 <header>
-    <h3>Inserir Tipo</h3>
+    <h3>Inserir Forncedor</h3>
 </header>
 <section>
     <div>
 
         <body>
-        <form action="#" th:action="@{/addTipoProduto}" th:object="${tipoProduto}" method="post">
+        <form action="#" th:action="@{/addFornecedor}" th:object="${fornecedor}" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Inserir um tipo" th:field="*{nome}">
+                <input type="text" class="form-control" placeholder="Novo fornecedor" th:field="*{nome}">
             </div>
             <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>
         </body>
     </div>
-        <a href="index.html">Página Inicial</a>
     <div>
+        <a href="index.html">Página Inicial</a>
     </div>
 </section>
 <footer>

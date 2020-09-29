@@ -1,10 +1,7 @@
 package com.example.estoque.entity;
 
-import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.thymeleaf.util.StringUtils;
-
 
 @Document
 public class TipoProduto {
@@ -14,11 +11,11 @@ public class TipoProduto {
 
     private String nome;
 
-    public TipoProduto() {
-    }
-
     public TipoProduto(String nome) {
         this.nome = nome;
+    }
+
+    public TipoProduto() {
     }
 
     public String getId() {

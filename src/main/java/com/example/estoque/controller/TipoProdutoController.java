@@ -16,13 +16,13 @@ public class TipoProdutoController {
     TipoProdutoService tipoProdutoService;
 
     @GetMapping("/addTipoProduto")
-    public String getTipoProduto(Model model) {
+    public String get(Model model) {
         model.addAttribute("tipoProduto", new TipoProduto());
         return "addTipoProduto";
     }
 
     @PostMapping("/addTipoProduto")
-    public String tipoProdutoSave(@ModelAttribute TipoProduto tipoProduto) {
+    public String save(@ModelAttribute TipoProduto tipoProduto) {
         tipoProdutoService.create(tipoProduto.getNome());
         return "tipoProdutoDetail";
     }

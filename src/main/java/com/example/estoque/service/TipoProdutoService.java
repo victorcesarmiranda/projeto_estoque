@@ -17,9 +17,9 @@ public class TipoProdutoService {
         return tipoProdutoRepository.findById(id);
     }
 
-    public TipoProduto create(String nome) {
+    public void create(String nome) {
         TipoProduto tipoProduto = new TipoProduto(nome);
-        return this.save(tipoProduto);
+        this.save(tipoProduto);
     }
 
     public TipoProduto save(TipoProduto tipoProduto) {

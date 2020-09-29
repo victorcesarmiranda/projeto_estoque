@@ -17,4 +17,13 @@ public class FornecedorService {
         return fornecedorRepository.findById(id);
     }
 
+    public void create(String nome) {
+        Fornecedor fornecedor = new Fornecedor(nome);
+        this.save(fornecedor);
+    }
+
+    public Fornecedor save(Fornecedor fornecedor) {
+        return fornecedorRepository.save(fornecedor);
+    }
+
 }

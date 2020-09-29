@@ -17,4 +17,12 @@ public class ClienteService {
         return clienteRepository.findById(id);
     }
 
+    public void create(String nome) {
+        Cliente cliente = new Cliente(nome);
+        this.save(cliente);
+    }
+
+    public Cliente save(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
 }

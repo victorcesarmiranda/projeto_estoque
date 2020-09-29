@@ -4,9 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@NoArgsConstructor
-@Getter
-@Setter
 @Document
 public class Cliente {
 
@@ -14,4 +11,27 @@ public class Cliente {
     private String id;
 
     private String nome;
+
+    public Cliente(String nome) {
+        this.nome = nome;
+    }
+
+    public Cliente() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
