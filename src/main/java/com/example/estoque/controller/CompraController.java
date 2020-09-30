@@ -38,8 +38,15 @@ public class CompraController {
         return "addCompra";
     }
 
+    @GetMapping("/compra")
+    public String lista(Model model) {
+        model.addAttribute("listaCompras", compraService.findAll());
+        return "compra";
+    }
+
     @PostMapping("/addCompra")
-    public void save(@ModelAttribute Compra compra) {
+    public String save(@ModelAttribute Compra compra) {
         compraService.create(compra.getFornecedor(), compra.getProduto(), compra.getQuantidade(), compra.getData());
+        return "redirect:compra";
     }
 }
