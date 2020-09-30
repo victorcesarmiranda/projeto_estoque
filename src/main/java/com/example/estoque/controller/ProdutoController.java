@@ -32,8 +32,9 @@ public class ProdutoController {
     }
 
     @PostMapping("/addProduto")
-    public void save(@ModelAttribute Produto produto) {
+    public String save(@ModelAttribute Produto produto) {
         produtoService.create(produto.getNome(), produto.getTipoProduto(), produto.getQuantidade());
+        return "redirect:menu";
     }
 
     @GetMapping("/menu")
