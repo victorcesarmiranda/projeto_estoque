@@ -28,7 +28,7 @@
                         th:text="${produto.nome}"></option>
             </select><br>
             <input id="quantidade" type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}" required><br>
-            <input id="data" type="date" class="form-control" placeholder="Data" th:field="*{data}">
+            <input id="data" type="date" class="form-control" placeholder="Data" th:field="*{data}" required>
         </div>
         <button type="submit" class="btn btn-primary">Adicionar</button>
         <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>

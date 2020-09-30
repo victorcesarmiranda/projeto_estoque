@@ -26,7 +26,7 @@
                     <option th:each="produto : ${listaProdutos}" th:value="${produto.nome}" th:text="${produto.nome}"></option>
                 </select><br>
                 <input type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}" required><br>
-                <input type="date" class="form-control" placeholder="Data" th:field="*{data}" ><br>
+                <input type="date" class="form-control" placeholder="Data" th:field="*{data}" required><br>
             </div>
             <button type="submit" class="btn btn-primary">Adicionar</button>
             <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
