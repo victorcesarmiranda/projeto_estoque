@@ -21,8 +21,15 @@ public class TipoProdutoController {
         return "addTipoProduto";
     }
 
+    @GetMapping("/tipoProduto")
+    public String lista(Model model) {
+        model.addAttribute("listaTiposProduto", tipoProdutoService.findAll());
+        return "tipoProduto";
+    }
+
     @PostMapping("/addTipoProduto")
-    public void save(@ModelAttribute TipoProduto tipoProduto) {
+    public String save(@ModelAttribute TipoProduto tipoProduto) {
         tipoProdutoService.create(tipoProduto.getNome());
+        return "redirect:tipoProduto";
     }
 }
