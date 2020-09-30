@@ -36,11 +36,11 @@ public class ProdutoController {
         produtoService.create(produto.getNome(), produto.getTipoProduto(), produto.getQuantidade());
     }
 
-    @GetMapping("/")
+    @GetMapping("/menu")
     private String index(Model model) {
         List<Produto> listaProdutos = produtoService.findAll();
         model.addAttribute("listaProdutos",listaProdutos);
-        return "index";
+        return "menu";
     }
 
 }
