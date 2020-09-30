@@ -21,8 +21,15 @@ public class FornecedorController {
         return "addFornecedor";
     }
 
+    @GetMapping("/fornecedor")
+    public String lista(Model model) {
+        model.addAttribute("listaFornecedores", fornecedorService.findAll());
+        return "fornecedor";
+    }
+
     @PostMapping("/addFornecedor")
-    public void save(@ModelAttribute Fornecedor fornecedor) {
+    public String save(@ModelAttribute Fornecedor fornecedor) {
         fornecedorService.create(fornecedor.getNome());
+        return "redirect:fornecedor";
     }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Fornecedores</title>
+    <link href="style1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<body>
+<header>
+    <div>
+        <br>
+        <br>
+    </div>
+    <h3>Fornecedores Registrados</h3><br>
+</header>
+<div class="estoque">
+    <table style=text-align:center class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">FORNECEDOR</th>
+            <th scope="col">OPÇÕES</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="fornecedor : ${listaFornecedores}">
+            <td th:text="${fornecedor.id}"></td>
+            <td th:text="${fornecedor.nome}"></td>
+            <td>
+                <a href="/alterarFornecedor"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
+                <a href="/deletarFornecedor"><button type="button" class="btn btn-outline-danger">deletar</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/addFornecedor"><button type="button" box-align="right" class=" btn btn-primary ">Adicionar</button></a>
+    <a href="/menu"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
+</div>
+</body>
+<footer>
+    <br>
+    <p>&copy; Atualização de Estoque</p>
+</footer>
+
+</html>
