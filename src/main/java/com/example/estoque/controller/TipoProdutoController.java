@@ -22,8 +22,7 @@ public class TipoProdutoController {
     }
 
     @PostMapping("/addTipoProduto")
-    public String save(@ModelAttribute TipoProduto tipoProduto) {
+    public void save(@ModelAttribute TipoProduto tipoProduto) {
         tipoProdutoService.create(tipoProduto.getNome());
-        return "tipoProdutoDetail";
     }
 }

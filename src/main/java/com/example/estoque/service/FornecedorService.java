@@ -5,6 +5,7 @@ import com.example.estoque.repoository.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +16,10 @@ public class FornecedorService {
 
     public Optional<Fornecedor> findById(String id) {
         return fornecedorRepository.findById(id);
+    }
+
+    public List<Fornecedor> findAll() {
+        return fornecedorRepository.findAll();
     }
 
     public void create(String nome) {

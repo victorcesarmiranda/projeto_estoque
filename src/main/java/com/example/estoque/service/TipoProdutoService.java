@@ -5,6 +5,7 @@ import com.example.estoque.repoository.TipoProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +16,10 @@ public class TipoProdutoService {
 
     public Optional<TipoProduto> findById(String id) {
         return tipoProdutoRepository.findById(id);
+    }
+
+    public List<TipoProduto> findAll() {
+        return tipoProdutoRepository.findAll();
     }
 
     public void create(String nome) {
