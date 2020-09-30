@@ -18,12 +18,13 @@
 
     <form action="#" th:action="@{/addProduto}" th:object="${produto}" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nome do Produto" th:field="*{nome}">
-            <select th:field="*{tipoProduto}" class="form-control" required>
+            <input type="text" class="form-control" placeholder="Nome do Produto" th:field="*{nome}" required><br>
+            <select th:field="*{tipoProduto}" id="tipoProduto" class="form-control" required>
+                <option value="">Tipo de Produto</option>
                 <option th:each="tipoProduto : ${listaTiposProduto}" th:value="${tipoProduto.nome}"
                         th:text="${tipoProduto.nome}"></option>
             </select><br>
-            <input type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}"><br>
+            <input type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}" required><br>
         </div>
         <button type="submit " class="btn btn-primary ">Adicionar</button>
         <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>

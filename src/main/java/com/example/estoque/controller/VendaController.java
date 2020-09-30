@@ -35,6 +35,6 @@ public class VendaController {
 
     @PostMapping("/addVenda")
     public void save(@ModelAttribute Venda venda) {
-        vendaService.create(venda.getCliente(), venda.getProduto(), venda.getQuantidade(), LocalDate.now());
+        vendaService.create(venda.getCliente(), venda.getProduto(), venda.getQuantidade(), venda.getData());
     }
 }

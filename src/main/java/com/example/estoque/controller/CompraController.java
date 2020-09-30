@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.time.LocalDate;
-
 @Controller
 public class CompraController {
 
@@ -35,6 +33,6 @@ public class CompraController {
 
     @PostMapping("/addCompra")
     public void save(@ModelAttribute Compra compra) {
-        compraService.create(compra.getFornecedor(), compra.getProduto(), compra.getQuantidade(), LocalDate.now());
+        compraService.create(compra.getFornecedor(), compra.getProduto(), compra.getQuantidade(), compra.getData());
     }
 }

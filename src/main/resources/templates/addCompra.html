@@ -17,15 +17,17 @@
 
     <form action="#" th:action="@{/addCompra}" th:object="${compra}" method="post">
         <div class="form-group">
-            <select id="fornecedor" th:field="*{fornecedor}" class="form-control">
+            <select id="fornecedor" th:field="*{fornecedor}" class="form-control" required>
+                <option value="">Fornecedor</option>
                 <option th:each="fornecedor : ${listaFornecedores}" th:value="${fornecedor.nome}"
                         th:text="${fornecedor.nome}"></option>
             </select><br>
-            <select id="produto" th:field="*{produto}" class="form-control">
+            <select id="produto" th:field="*{produto}" class="form-control" required>
+                <option value="">Produto</option>
                 <option th:each="produto : ${listaProdutos}" th:value="${produto.nome}"
                         th:text="${produto.nome}"></option>
             </select><br>
-            <input id="quantidade" type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}"><br>
+            <input id="quantidade" type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}" required><br>
             <input id="data" type="date" class="form-control" placeholder="Data" th:field="*{data}">
         </div>
         <button type="submit" class="btn btn-primary">Adicionar</button>

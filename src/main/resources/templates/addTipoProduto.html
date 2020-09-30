@@ -17,7 +17,7 @@
 
     <form action="#" th:action="@{/addTipoProduto}" th:object="${tipoProduto}" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Inserir um tipo" th:field="*{nome}">
+            <input type="text" class="form-control" placeholder="Inserir um tipo" th:field="*{nome}" required>
         </div>
         <button type="submit" class="btn btn-primary">Adicionar</button>
         <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
