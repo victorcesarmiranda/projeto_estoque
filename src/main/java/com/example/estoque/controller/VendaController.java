@@ -39,8 +39,15 @@ public class VendaController {
         return "addVenda";
     }
 
+    @GetMapping("/venda")
+    public String lista(Model model) {
+        model.addAttribute("listaVendas", vendaService.findAll());
+        return "venda";
+    }
+
     @PostMapping("/addVenda")
-    public void save(@ModelAttribute Venda venda) {
+    public String save(@ModelAttribute Venda venda) {
         vendaService.create(venda.getCliente(), venda.getProduto(), venda.getQuantidade(), venda.getData());
+        return "redirect:venda";
     }
 }
