@@ -1,6 +1,5 @@
 package com.example.estoque.service;
 
-import com.example.estoque.entity.Cliente;
 import com.example.estoque.entity.Produto;
 import com.example.estoque.entity.Venda;
 import com.example.estoque.repoository.VendaRepository;
@@ -23,12 +22,13 @@ public class VendaService {
         return vendaRepository.findById(id);
     }
 
-    public void create(Cliente cliente, Produto produto, Double quantidade, LocalDate data) {
+    public void create(String cliente, String produto, Double quantidade, LocalDate data) {
         Venda venda = new Venda(cliente, produto, quantidade, data);
         this.save(venda);
-        produto.setUltimaCompra(quantidade);
-        produto.setQuantidade(produto.getQuantidade() - quantidade);
-        produtoService.save(produto);
+        Produto produtoVendido = produtoService.findByNome(produto);
+        produtoVendido.setUltimaVenda(quantidade);
+        produtoVendido.setQuantidade(produtoVendido.getQuantidade() - quantidade);
+        produtoService.save(produtoVendido);
     }
 
     public Venda save(Venda venda) {

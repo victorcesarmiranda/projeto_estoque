@@ -11,9 +11,7 @@ public class Produto {
 
     private String nome;
 
-    private TipoProduto tipoProduto;
-
-    private String tipoProdutoNome;
+    private String tipoProduto;
 
     private Double quantidade;
 
@@ -21,7 +19,7 @@ public class Produto {
 
     private Double ultimaVenda;
 
-    public Produto(String nome, TipoProduto tipoProduto, Double quantidade) {
+    public Produto(String nome, String tipoProduto, Double quantidade) {
         this.nome = nome;
         this.tipoProduto = tipoProduto;
         this.quantidade = quantidade;
@@ -46,11 +44,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public TipoProduto getTipoProduto() {
+    public String getTipoProduto() {
         return tipoProduto;
     }
 
-    public void setTipoProduto(TipoProduto tipoProduto) {
+    public void setTipoProduto(String tipoProduto) {
         this.tipoProduto = tipoProduto;
     }
 
@@ -78,11 +76,4 @@ public class Produto {
         this.ultimaVenda = ultimaVenda;
     }
 
-    public String getTipoProdutoNome() {
-        return tipoProdutoNome;
-    }
-
-    public void setTipoProdutoNome(String tipoProdutoNome) {
-        this.tipoProdutoNome = tipoProdutoNome;
-    }
 }

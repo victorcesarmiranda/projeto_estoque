@@ -1,7 +1,6 @@
 package com.example.estoque.service;
 
 import com.example.estoque.entity.Compra;
-import com.example.estoque.entity.Fornecedor;
 import com.example.estoque.entity.Produto;
 import com.example.estoque.repoository.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +22,13 @@ public class CompraService {
         return compraRepository.findById(id);
     }
 
-    public void create(Fornecedor fornecedor, Produto produto, Double quantidade, LocalDate data) {
+    public void create(String fornecedor, String produto, Double quantidade, LocalDate data) {
         Compra compra = new Compra(fornecedor, produto, quantidade, data);
         this.save(compra);
-        produto.setUltimaCompra(quantidade);
-        produto.setQuantidade(produto.getQuantidade() - quantidade);
-        produtoService.save(produto);
+        Produto produtoComprado = produtoService.findByNome(produto);
+        produtoComprado.setUltimaCompra(quantidade);
+        produtoComprado.setQuantidade(produtoComprado.getQuantidade() + quantidade);
+        produtoService.save(produtoComprado);
     }
 
     public Compra save(Compra compra) {

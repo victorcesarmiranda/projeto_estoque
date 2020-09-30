@@ -1,5 +1,8 @@
 package com.example.estoque.controller;
 
+import com.example.estoque.entity.Cliente;
+import com.example.estoque.entity.Fornecedor;
+import com.example.estoque.entity.Produto;
 import com.example.estoque.entity.Venda;
 import com.example.estoque.service.ClienteService;
 import com.example.estoque.service.ProdutoService;
@@ -11,7 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class VendaController {
@@ -27,9 +31,11 @@ public class VendaController {
 
     @GetMapping("/addVenda")
     public String get(Model model) {
+        List<String> listaClientes = clienteService.findAll().stream().map(Cliente::getNome).collect(Collectors.toList());
+        List<String> listaProdutos = produtoService.findAll().stream().map(Produto::getNome).collect(Collectors.toList());
         model.addAttribute("venda", new Venda());
-        model.addAttribute("listaClientes", clienteService.findAll());
-        model.addAttribute("listaProdutos", produtoService.findAll());
+        model.addAttribute("listaClientes", listaClientes);
+        model.addAttribute("listaProdutos", listaProdutos);
         return "addVenda";
     }
 

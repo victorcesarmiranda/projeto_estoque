@@ -1,8 +1,8 @@
 package com.example.estoque.entity;
 
-import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -12,15 +12,16 @@ public class Compra {
     @Id
     private String id;
 
-    private Fornecedor fornecedor;
+    private String fornecedor;
 
-    private Produto produto;
+    private String produto;
 
     private Double quantidade;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate data;
 
-    public Compra(Fornecedor fornecedor, Produto produto, Double quantidade, LocalDate data) {
+    public Compra(String fornecedor, String produto, Double quantidade, LocalDate data) {
         this.fornecedor = fornecedor;
         this.produto = produto;
         this.quantidade = quantidade;
@@ -38,19 +39,19 @@ public class Compra {
         this.id = id;
     }
 
-    public Fornecedor getFornecedor() {
+    public String getFornecedor() {
         return fornecedor;
     }
 
-    public void setFornecedor(Fornecedor fornecedor) {
+    public void setFornecedor(String fornecedor) {
         this.fornecedor = fornecedor;
     }
 
-    public Produto getProduto() {
+    public String getProduto() {
         return produto;
     }
 
-    public void setProduto(Produto produto) {
+    public void setProduto(String produto) {
         this.produto = produto;
     }
 
