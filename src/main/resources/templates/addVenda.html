@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Registrar Venda</title>
+    <link href="style1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<header>
+    <h3>Registrar Venda</h3>
+</header>
+<section>
+        <form action="#" th:action="@{/addVenda}" th:object="${venda}" method="post">
+            <div class="form-group">
+                <label for="cliente">Cliente</label>
+                <select th:field="*{cliente}" id="cliente" class="form-control">
+                    <option th:each="cliente : ${listaClientes}" th:value="${cliente.nome}" th:text="${cliente.nome}"></option>
+                </select>
+                <label for="produto">Produto</label>
+                <select th:field="*{produto}" id="produto" class="form-control">
+                    <option th:each="produto : ${listaProdutos}" th:value="${produto.nome}" th:text="${produto.nome}"></option>
+                </select><br>
+                <input type="text" class="form-control" placeholder="Quantidade" th:field="*{quantidade}"><br>
+                <input type="date" class="form-control" placeholder="Data" th:field="*{data}"><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+            <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
+        </form>
+</section>
+</body>
+<footer>
+    <br>
+    <p>&copy; Atualização de Estoque</p>
+</footer>
+
+</html>

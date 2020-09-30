@@ -1,6 +1,5 @@
 package com.example.estoque.service;
 
-import com.example.estoque.entity.Cliente;
 import com.example.estoque.entity.Compra;
 import com.example.estoque.entity.Fornecedor;
 import com.example.estoque.entity.Produto;
@@ -17,6 +16,9 @@ public class CompraService {
     @Autowired
     CompraRepository compraRepository;
 
+    @Autowired
+    ProdutoService produtoService;
+
     public Optional<Compra> findById(String id) {
         return compraRepository.findById(id);
     }
@@ -24,6 +26,9 @@ public class CompraService {
     public void create(Fornecedor fornecedor, Produto produto, Double quantidade, LocalDate data) {
         Compra compra = new Compra(fornecedor, produto, quantidade, data);
         this.save(compra);
+        produto.setUltimaCompra(quantidade);
+        produto.setQuantidade(produto.getQuantidade() - quantidade);
+        produtoService.save(produto);
     }
 
     public Compra save(Compra compra) {

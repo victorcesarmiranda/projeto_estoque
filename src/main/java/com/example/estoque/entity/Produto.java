@@ -13,7 +13,13 @@ public class Produto {
 
     private TipoProduto tipoProduto;
 
+    private String tipoProdutoNome;
+
     private Double quantidade;
+
+    private Double ultimaCompra;
+
+    private Double ultimaVenda;
 
     public Produto(String nome, TipoProduto tipoProduto, Double quantidade) {
         this.nome = nome;
@@ -54,5 +60,29 @@ public class Produto {
 
     public void setQuantidade(Double quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public Double getUltimaCompra() {
+        return ultimaCompra;
+    }
+
+    public void setUltimaCompra(Double ultimaCompra) {
+        this.ultimaCompra = ultimaCompra;
+    }
+
+    public Double getUltimaVenda() {
+        return ultimaVenda;
+    }
+
+    public void setUltimaVenda(Double ultimaVenda) {
+        this.ultimaVenda = ultimaVenda;
+    }
+
+    public String getTipoProdutoNome() {
+        return tipoProdutoNome;
+    }
+
+    public void setTipoProdutoNome(String tipoProdutoNome) {
+        this.tipoProdutoNome = tipoProdutoNome;
     }
 }

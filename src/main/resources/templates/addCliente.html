@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Formulario</title>
-    <link href="style1.css" rel="stylesheet" type="text/css" />
+    <link href="style1.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -14,18 +14,14 @@
     <h3>Novo Cliente</h3>
 </header>
 <section>
-    <div>
-
-        <body>
-        <form action="#" th:action="@{/addCliente}" th:object="${cliente}" method="post">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Novo cliente" th:field="*{nome}">
-                <button type="submit" class="btn btn-primary">Adicionar</button>
-            </div>
-        </form>
-        <div>
-            <a href="index.html">Página Inicial</a>
+    <form action="#" th:action="@{/addCliente}" th:object="${cliente}" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Novo cliente" th:field="*{nome}">
         </div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a href="/"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
+    </form>
+
 </section>
 </body>
 <footer>

@@ -82,16 +82,7 @@ section {
     background: white;
     border-radius: 10px;
     padding: 45px;
-    width: 600px;
-    margin: auto;
-    box-shadow: 5px 5px 10px #abb4dc
-}
-
-.estoque {
-    background: white;
-    border-radius: 10px;
-    padding: 45px;
-    width: 75%;
+    width: 80%;
     margin: auto;
     box-shadow: 5px 5px 10px #abb4dc
 }
@@ -294,7 +285,6 @@ th {
 label {
     display: inline-block;
     margin-bottom: 0.5rem;
-    font-size: 16px;
 }
 
 button {
@@ -9355,4 +9345,6 @@ a.text-dark:focus {
         border-color: #dee2e6;
     }
 }
+
+
 /*# sourceMappingURL=bootstrap.css.map */
