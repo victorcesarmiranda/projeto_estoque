@@ -25,7 +25,7 @@
             <th scope="col">CLIENTE</th>
             <th scope="col">PRODUTO</th>
             <th scope="col">QUANTIDADE</th>
-            <th scope="col">OPÇÕES</th>
+            <th scope="col">DATA</th>
         </tr>
         </thead>
         <tbody>
@@ -34,10 +34,7 @@
             <td th:text="${venda.cliente}"></td>
             <td th:text="${venda.produto}"></td>
             <td th:text="${venda.quantidade}"></td>
-            <td>
-                <a href="/alterarVenda"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
-                <a href="/deletarVenda"><button type="button" class="btn btn-outline-danger">deletar</button></a>
-            </td>
+            <td th:text="${venda.data}"></td>
         </tr>
         </tbody>
     </table>

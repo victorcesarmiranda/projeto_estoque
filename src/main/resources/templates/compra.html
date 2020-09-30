@@ -25,7 +25,7 @@
             <th scope="col">PRODUTO</th>
             <th scope="col">FORNECEDOR</th>
             <th scope="col">QUANTIDADE</th>
-            <th scope="col">OPÇÕES</th>
+            <th scope="col">DATA</th>
         </tr>
         </thead>
         <tbody>
@@ -34,10 +34,7 @@
             <td th:text="${compra.produto}"></td>
             <td th:text="${compra.fornecedor}"></td>
             <td th:text="${compra.quantidade}"></td>
-            <td>
-                <a href="/alterarCompra"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
-                <a href="/deletarCompra"><button type="button" class="btn btn-outline-danger">deletar</button></a>
-            </td>
+            <td th:text="${compra.data}"></td>
         </tr>
         </tbody>
     </table>

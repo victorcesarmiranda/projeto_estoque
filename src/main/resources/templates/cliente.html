@@ -23,17 +23,12 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">CLIENTE</th>
-            <th scope="col">OPÇÕES</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="cliente : ${listaClientes}">
             <td th:text="${cliente.id}"></td>
             <td th:text="${cliente.nome}"></td>
-            <td>
-                <a href="/alterarCliente"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
-                <a href="/deletarCliente"><button type="button" class="btn btn-outline-danger">deletar</button></a>
-            </td>
         </tr>
         </tbody>
     </table>

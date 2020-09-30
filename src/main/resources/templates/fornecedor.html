@@ -25,17 +25,12 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">FORNECEDOR</th>
-            <th scope="col">OPÇÕES</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="fornecedor : ${listaFornecedores}">
             <td th:text="${fornecedor.id}"></td>
             <td th:text="${fornecedor.nome}"></td>
-            <td>
-                <a href="/alterarFornecedor"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
-                <a href="/deletarFornecedor"><button type="button" class="btn btn-outline-danger">deletar</button></a>
-            </td>
         </tr>
         </tbody>
     </table>
