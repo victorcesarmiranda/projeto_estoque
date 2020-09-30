@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Clientes</title>
+    <link href="style1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<header>
+    <div>
+        <br>
+        <br>
+    </div>
+    <h3>Clientes Registrados</h3><br>
+</header>
+<div class="estoque">
+    <table style=text-align:center class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">CLIENTE</th>
+            <th scope="col">OPÇÕES</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cliente : ${listaClientes}">
+            <td th:text="${cliente.id}"></td>
+            <td th:text="${cliente.nome}"></td>
+            <td>
+                <a href="/alterarCliente"><button type="button" box-align="center" class=" btn btn-outline-primary ">alterar</button></a>
+                <a href="/deletarCliente"><button type="button" class="btn btn-outline-danger">deletar</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/addCliente"><button type="button" box-align="right" class=" btn btn-primary ">Adicionar</button></a>
+    <a href="/menu"><button type="button" box-align="right" class=" btn btn-outline-primary ">Menu</button></a>
+</div>
+</body>
+<footer>
+    <br>
+    <p>&copy; Atualização de Estoque</p>
+</footer>
+
+</html>

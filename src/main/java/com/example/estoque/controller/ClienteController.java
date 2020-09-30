@@ -21,8 +21,15 @@ public class ClienteController {
         return "addCliente";
     }
 
+    @GetMapping("/cliente")
+    public String lista(Model model) {
+        model.addAttribute("listaClientes", clienteService.findAll());
+        return "cliente";
+    }
+
     @PostMapping("/addCliente")
-    public void save(@ModelAttribute Cliente cliente) {
+    public String save(@ModelAttribute Cliente cliente) {
         clienteService.create(cliente.getNome());
+        return "redirect:cliente";
     }
 }
